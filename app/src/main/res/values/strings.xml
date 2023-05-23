@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">OpenWeather</string>
+    <string name="location">Location</string>
+    <string name="weather_app_unavailable">Weather App is unavailable</string>
+    <string name="weather_app_unavailable_message">Weather App requires permission to access your current location, you can turn this function on in settings.</string>
+    <string name="go_to_settings">GO TO SETTINGS</string>
+    <string name="open_weather_logo">Open Weather Logo</string>
+    <string name="weather_condition_icon">Weather Condition Icon</string>
+    <string name="temperature_degrees">%s°</string>
+    <string name="min_and_max_temperature_degrees">%s° / %s°</string>
+    <string name="five_day_forecast">5-DAY FORECAST</string>
+    <string name="daily_forecast">DAILY FORECAST</string>
+    <string name="weather_map">Weather Map</string>
+</resources>

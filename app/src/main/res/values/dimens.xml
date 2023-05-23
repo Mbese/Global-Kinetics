@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_text_size">14sp</dimen>
+    <dimen name="medium_padding">16dp</dimen>
+    <dimen name="medium_text_size">16sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="default_padding_x3">48dp</dimen>
+    <dimen name="bg_image_width">239dp</dimen>
+    <dimen name="bg_image_height">102dp</dimen>
+    <dimen name="xlarge_text_size">36sp</dimen>
+    <dimen name="top_margin">102dp</dimen>
+    <dimen name="large_padding">28dp</dimen>
+    <dimen name="icon_width">100dp</dimen>
+    <dimen name="icon_height">100dp</dimen>
+    <dimen name="xxlarge_text_size">72sp</dimen>
+    <dimen name="card_corner_radius">7dp</dimen>
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="card_view_height">270dp</dimen>
+    <dimen name="view_height">1dp</dimen>
+    <dimen name="xsmall_text_size">8sp</dimen>
+    <dimen name="pop_padding">10dp</dimen>
+    <dimen name="condition_icon_width">44dp</dimen>
+    <dimen name="condition_icon_height">44dp</dimen>
+</resources>

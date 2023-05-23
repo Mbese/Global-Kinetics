@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/default_padding_x3"
+    android:paddingEnd="@dimen/default_padding_x3"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/primary_gradient_colour">
+
+    <ImageView
+        android:id="@+id/bg_logo"
+        android:layout_width="@dimen/bg_image_width"
+        android:layout_height="@dimen/bg_image_height"
+        android:src="@drawable/logo_white_cropped"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:contentDescription="@string/open_weather_logo" />
+
+    <TextView
+        android:id="@+id/title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/large_text_size"
+        android:text="@string/weather_app_unavailable"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/medium_padding"
+        app:layout_constraintTop_toBottomOf="@+id/bg_logo"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/message_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/medium_text_size"
+        android:text="@string/weather_app_unavailable_message"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/medium_padding"
+        android:textAlignment="center"
+        app:layout_constraintTop_toBottomOf="@+id/title_text_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <Button
+        android:id="@+id/go_to_settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/medium_padding"
+        android:textSize="@dimen/small_text_size"
+        android:textColor="@color/secondary_colour_sunrise"
+        android:fontFamily="sans-serif-medium"
+        android:background="@android:color/transparent"
+        android:text="@string/go_to_settings"
+        app:layout_constraintTop_toBottomOf="@+id/message_text_view"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

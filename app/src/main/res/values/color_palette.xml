@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_colour_blue_01">#154F9E</color>
+    <color name="primary_colour_blue_01_30op">#4D154F9E</color>
+    <color name="secondary_colour_blue_02">#7BB9E7</color>
+    <color name="secondary_colour_sunrise">#E16B14</color>
+    <color name="red_colour">#FF1D25</color>
+    <color name="light_grey_colour">#CED0D1</color>
+    <color name="light_grey_colour_30op">#FF000000</color>
+    <color name="light_grey_colour_33op">#FF000000</color>
+    <color name="medium_grey_colour">#6D6E6F</color>
+    <color name="medium_grey_colour_70op">#FFFFFFFF</color>
+</resources>
