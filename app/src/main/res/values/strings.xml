@@ -12,4 +12,5 @@
     <string name="five_day_forecast">5-DAY FORECAST</string>
     <string name="daily_forecast">DAILY FORECAST</string>
     <string name="weather_map">Weather Map</string>
+    <string name="error_message">Sorry we couldn\'t get you weather update</string>
 </resources>

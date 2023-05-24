@@ -18,6 +18,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.globalkinetics.android.BuildConfig
 import com.globalkinetics.android.R
+import com.globalkinetics.android.model.CurrentWeather
+import com.globalkinetics.android.model.Daily
 import com.globalkinetics.android.model.Hourly
 import com.globalkinetics.android.viewmodel.WeatherViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -94,33 +96,45 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         viewModel.currentWeather.observe(viewLifecycleOwner) { currentWeather ->
-            locationTextView.text = currentWeather.name
-            tempTextView.text =
-                getString(R.string.temperature_degrees, currentWeather.main.temp.substring(0, 2))
-            weatherConditionDescTextView.text = currentWeather.weather[0].description
-
-            Glide.with(requireContext())
-                .load("https://openweathermap.org/img/wn/" + currentWeather.weather[0].icon + ".png")
-                .into(weatherConditionIconImageView)
-
-            Glide.with(requireContext())
-                .load("https://tile.openweathermap.org/map/temp_new/5/10/10.png?appid=" + BuildConfig.API_KEY)
-                .into(weatherMapImageView)
+            displayCurrentWeatherInfo(currentWeather)
 
         }
 
         viewModel.fullWeather.observe(viewLifecycleOwner) { fiveDayForecastList ->
-            dailyForecastAdapter.updateList(fiveDayForecastList)
-            recyclerView?.adapter = dailyForecastAdapter
+            updateFiveDayForecastList(fiveDayForecastList)
         }
 
         viewModel.hourlyForecast.observe(viewLifecycleOwner) { hourlyForecast ->
-            hourlForecastAdapter.updateList(hourlyForecast as MutableList<Hourly>)
-            hourlyForecastRecyclerView?.adapter = hourlForecastAdapter
-
-            popAdapter.updateList(hourlyForecast)
-            popRecyclerView?.adapter = popAdapter
+            updateHourlyForecastList(hourlyForecast)
         }
+    }
+
+    private fun updateHourlyForecastList(hourlyForecast: List<Hourly>?) {
+        hourlForecastAdapter.updateList(hourlyForecast as MutableList<Hourly>)
+        hourlyForecastRecyclerView?.adapter = hourlForecastAdapter
+
+        popAdapter.updateList(hourlyForecast)
+        popRecyclerView?.adapter = popAdapter
+    }
+
+    private fun updateFiveDayForecastList(fiveDayForecastList: List<Daily>) {
+        dailyForecastAdapter.updateList(fiveDayForecastList)
+        recyclerView?.adapter = dailyForecastAdapter
+    }
+
+    private fun displayCurrentWeatherInfo(currentWeather: CurrentWeather) {
+        locationTextView.text = currentWeather.name
+        tempTextView.text =
+            getString(R.string.temperature_degrees, currentWeather.main.temp.substring(0, 2))
+        weatherConditionDescTextView.text = currentWeather.weather[0].description
+
+        Glide.with(requireContext())
+            .load("https://openweathermap.org/img/wn/" + currentWeather.weather[0].icon + ".png")
+            .into(weatherConditionIconImageView)
+
+        Glide.with(requireContext())
+            .load("https://tile.openweathermap.org/map/temp_new/5/10/10.png?appid=" + BuildConfig.API_KEY)
+            .into(weatherMapImageView)
     }
 
     private fun handleHourlyForecastProgressLoader(shouldShow: Boolean) {

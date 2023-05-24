@@ -28,7 +28,6 @@ class WeatherRepository @Inject constructor(
             weatherService.getCurrentWeather(it.latitude, it.longitude, BuildConfig.API_KEY)
                 .body()
         }.filterNotNull().firstOrNull()
-
     }
 
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)

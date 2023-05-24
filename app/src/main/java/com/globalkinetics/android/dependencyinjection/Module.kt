@@ -49,10 +49,14 @@ object Module {
 
     @Singleton
     @Provides
-    fun provideFavouriteMoviesRepository(apiService: WeatherService, @ApplicationContext appContext: Context) =
+    fun provideFavouriteMoviesRepository(
+        apiService: WeatherService,
+        @ApplicationContext appContext: Context
+    ) =
         WeatherRepository(apiService, appContext)
 
     @Singleton
     @Provides
-    fun provideDailyForecastAdapter(@ApplicationContext appContext: Context) = DailyForecastAdapter(appContext)
+    fun provideDailyForecastAdapter(@ApplicationContext appContext: Context) =
+        DailyForecastAdapter(appContext)
 }

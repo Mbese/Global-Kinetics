@@ -30,22 +30,21 @@ class WeatherViewModel @Inject constructor(
     val showHourlyForecastLoading: MutableLiveData<Boolean>
         get() = _showHourlyForecastLoading
 
-    private val _weatherError: MutableLiveData<String> = MutableLiveData()
-    val weatherError: MutableLiveData<String>
-        get() = _weatherError
+    private val _showErrorMessage: MutableLiveData<Boolean> = MutableLiveData()
+    val showErrorMessage: MutableLiveData<Boolean>
+        get() = _showErrorMessage
 
-    private val _currentWeather : MutableLiveData<CurrentWeather> = MutableLiveData()
+    private val _currentWeather: MutableLiveData<CurrentWeather> = MutableLiveData()
     val currentWeather: MutableLiveData<CurrentWeather>
-    get() = _currentWeather
+        get() = _currentWeather
 
-    private val _fullWeather : MutableLiveData<List<Daily>> = MutableLiveData()
+    private val _fullWeather: MutableLiveData<List<Daily>> = MutableLiveData()
     val fullWeather: MutableLiveData<List<Daily>>
-    get() = _fullWeather
+        get() = _fullWeather
 
-    private val _hourlyForecast : MutableLiveData<List<Hourly>> = MutableLiveData()
+    private val _hourlyForecast: MutableLiveData<List<Hourly>> = MutableLiveData()
     val hourlyForecast: MutableLiveData<List<Hourly>>
-    get() = _hourlyForecast
-
+        get() = _hourlyForecast
 
     init {
         _showTopLoading.value = true
@@ -53,17 +52,16 @@ class WeatherViewModel @Inject constructor(
         _showHourlyForecastLoading.value = true
     }
 
-
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
-     suspend fun getCurrentWeather() {
+    suspend fun getCurrentWeather() {
         val currentWeather = repository.getCurrentWeather()
-        withContext(Dispatchers.Main){
+        withContext(Dispatchers.Main) {
             currentWeather?.let {
                 _currentWeather.value = it
             }
 
             if (currentWeather == null) {
-                _weatherError.value = "Sorry we couldn't get you weather update"
+                _showErrorMessage.value = true
             }
         }
         _showTopLoading.value = false
@@ -72,13 +70,13 @@ class WeatherViewModel @Inject constructor(
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     suspend fun getFullWeather() {
         val fullWeather = repository.getFullWeather()
-        withContext(Dispatchers.Main){
+        withContext(Dispatchers.Main) {
             fullWeather?.let {
                 _fullWeather.value = it
             }
 
             if (fullWeather == null) {
-                _weatherError.value = "Sorry we couldn't get you weather update"
+                _showErrorMessage.value = true
             }
         }
         showForecastLoading.value = false
@@ -87,13 +85,13 @@ class WeatherViewModel @Inject constructor(
     @RequiresPermission(Manifest.permission.ACCESS_FINE_LOCATION)
     suspend fun getHourlyForecast() {
         val fullWeather = repository.getHourlyForecast()
-        withContext(Dispatchers.Main){
+        withContext(Dispatchers.Main) {
             fullWeather?.let {
                 _hourlyForecast.value = it
             }
 
             if (fullWeather == null) {
-                _weatherError.value = "Sorry we couldn't get you weather update"
+                _showErrorMessage.value = true
             }
         }
         _showHourlyForecastLoading.value = false

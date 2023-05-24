@@ -2,7 +2,6 @@ package com.globalkinetics.android.model
 
 import com.google.gson.annotations.SerializedName
 
-
 data class Temp(
 
     @SerializedName("day") var day: Double? = null,

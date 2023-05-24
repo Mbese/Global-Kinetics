@@ -2,7 +2,6 @@ package com.globalkinetics.android.view
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,6 @@ import android.widget.TextView
 import androidx.annotation.VisibleForTesting
 import androidx.recyclerview.widget.RecyclerView
 import com.globalkinetics.android.R
-import com.globalkinetics.android.model.Daily
 import com.globalkinetics.android.model.Hourly
 import java.text.SimpleDateFormat
 import java.util.*

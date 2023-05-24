@@ -1,7 +1,6 @@
 package com.globalkinetics.android.model
 
 import com.google.gson.annotations.SerializedName
-import kotlin.math.roundToInt
 
 data class Main(
     @SerializedName("temp")

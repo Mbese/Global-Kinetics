@@ -1,11 +1,7 @@
 package com.globalkinetics.android.model
 
-import android.annotation.SuppressLint
 import com.google.gson.annotations.SerializedName
-import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
-
 
 data class Daily(
 

@@ -43,6 +43,7 @@ class DailyForecastAdapter(private val context: Context) :  RecyclerView.Adapter
 
         holder.dayDesc.text = day
         holder.tempDescTextView.text = dayForecast.weather[0].description
+
         val minTemp = dayForecast.temp?.min.toString().substring(0, 2)
         val maxTemp = dayForecast.temp?.max.toString().substring(0, 2)
         holder.dayTempTextView.text = context.getString(R.string.min_and_max_temperature_degrees, minTemp, maxTemp)

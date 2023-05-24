@@ -8,7 +8,6 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.globalkinetics.android.R
 
-
 class NoPermissionsErrorFragment : Fragment(R.layout.fragment_no_permissions_error){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
